@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+apply plugin: 'idea'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation rootProject.ext.dependencies["rxjava"]
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+
+tasks.withType(JavaCompile) {
+    compileTask ->
+        compileTask.dependsOn tasks.findByName('idea')
+        options.encoding = "UTF-8"
+}
