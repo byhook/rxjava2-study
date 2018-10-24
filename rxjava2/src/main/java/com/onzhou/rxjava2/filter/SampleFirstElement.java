@@ -2,6 +2,7 @@ package com.onzhou.rxjava2.filter;
 
 import com.onzhou.rxjava2.common.CommonObserver;
 import com.onzhou.rxjava2.plugin.InvokePlugin;
+
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 
@@ -18,7 +19,7 @@ public class SampleFirstElement implements InvokePlugin {
                 .firstElement().subscribe(new Consumer<Integer>() {
             @Override
             public void accept(Integer value) throws Exception {
-                System.out.println(value);
+                System.out.println("accept: " + value);
             }
         });
     }

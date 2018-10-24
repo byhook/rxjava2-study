@@ -1,5 +1,6 @@
 package com.onzhou.rxjava2.filter;
 
+import com.onzhou.rxjava2.common.CommonComsumer;
 import com.onzhou.rxjava2.plugin.InvokePlugin;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
@@ -14,11 +15,6 @@ public class SampleElementAt implements InvokePlugin {
     @Override
     public void invoke() {
         Observable.just(1, 2, 3, 4, 5, 6, 7)
-                .elementAt(3).subscribe(new Consumer<Integer>() {
-            @Override
-            public void accept(Integer value) throws Exception {
-                System.out.println(value);
-            }
-        });
+                .elementAt(3).subscribe(new CommonComsumer<>());
     }
 }

@@ -16,7 +16,7 @@ public class SampleIntervalRange implements InvokePlugin {
     @Override
     public void invoke() {
         //指定发送范围
-        Observable.intervalRange(0, 2, 0, 1, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
+        Observable.intervalRange(0, 5, 0, 1, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
         try {
             Thread.sleep(8000);
         } catch (InterruptedException e) {

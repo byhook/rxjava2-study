@@ -15,7 +15,7 @@ public class SampleThrottleFirst implements InvokePlugin {
 
     @Override
     public void invoke() {
-        Observable.intervalRange(0, 10, 0, 1, TimeUnit.SECONDS)
+        Observable.intervalRange(0, 6, 0, 1, TimeUnit.SECONDS)
                 //每秒中只处理第一个数据
                 .throttleFirst(1, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
         try {

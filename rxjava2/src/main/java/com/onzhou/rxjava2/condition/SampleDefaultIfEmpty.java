@@ -9,7 +9,7 @@ import io.reactivex.Observable;
  * @date: 2018-10-22
  * @description:
  */
-public class SampleIsDefaultIfEmpty implements InvokePlugin {
+public class SampleDefaultIfEmpty implements InvokePlugin {
 
     @Override
     public void invoke() {

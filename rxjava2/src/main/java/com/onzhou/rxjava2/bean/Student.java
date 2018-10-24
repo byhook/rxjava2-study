@@ -44,11 +44,11 @@ public class Student {
     public static List<Student> create() {
         List<Student> students = new ArrayList<>();
         Student student;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             student = new Student();
             student.setAge(i);
             student.setName("name " + i);
-            student.setCourses(Arrays.asList(1, 2, 3, 4, 5));
+            student.setCourses(Arrays.asList(1, 2, 3));
             students.add(student);
         }
         return students;

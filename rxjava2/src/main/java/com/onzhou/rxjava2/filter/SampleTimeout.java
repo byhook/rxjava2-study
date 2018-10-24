@@ -18,9 +18,9 @@ public class SampleTimeout implements InvokePlugin {
     @Override
     public void invoke() {
         Observable.intervalRange(0, 10, 0, 2, TimeUnit.SECONDS)
-                .timeout(3, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
+                .timeout(1, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

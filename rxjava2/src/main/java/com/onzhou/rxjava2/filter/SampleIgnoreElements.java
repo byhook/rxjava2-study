@@ -2,6 +2,7 @@ package com.onzhou.rxjava2.filter;
 
 import com.onzhou.rxjava2.common.CommonObserver;
 import com.onzhou.rxjava2.plugin.InvokePlugin;
+
 import io.reactivex.Observable;
 import io.reactivex.functions.Action;
 
@@ -18,7 +19,7 @@ public class SampleIgnoreElements implements InvokePlugin {
                 .ignoreElements().subscribe(new Action() {
             @Override
             public void run() throws Exception {
-                System.out.println("hello");
+                System.out.println("onComplete");
             }
         });
     }

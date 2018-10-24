@@ -21,7 +21,6 @@ public class SampleScan implements InvokePlugin {
                 .scan(new BiFunction<Integer, Integer, Integer>() {
                     @Override
                     public Integer apply(Integer value1, Integer value2) throws Exception {
-                        //System.out.println("apply " + value1 + " " + value2);
                         return value2 + 1;
                     }
                 }).subscribeWith(new CommonObserver<>());

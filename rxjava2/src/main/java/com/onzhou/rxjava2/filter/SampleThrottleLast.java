@@ -15,12 +15,12 @@ public class SampleThrottleLast implements InvokePlugin {
 
     @Override
     public void invoke() {
-        Observable.intervalRange(0, 10, 0, 1, TimeUnit.SECONDS)
+        Observable.intervalRange(0, 8, 0, 1, TimeUnit.SECONDS)
                 //每秒中只处理第一个数据
                 //.sample(1, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
-                .throttleLast(1, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
+                .throttleLast(2, TimeUnit.SECONDS).subscribeWith(new CommonObserver<>());
         try {
-            Thread.sleep(5000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

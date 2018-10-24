@@ -17,7 +17,7 @@ public class SampleJust implements InvokePlugin {
     public void invoke() {
         Observable
                 //最多支持10个数据元素
-                .just(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+                .just(1, 2, 3, 4, 5)
                 .subscribeWith(new CommonObserver<>());
     }
 

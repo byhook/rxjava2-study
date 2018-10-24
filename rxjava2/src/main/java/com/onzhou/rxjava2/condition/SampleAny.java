@@ -18,7 +18,7 @@ public class SampleAny implements InvokePlugin {
                 .any(new Predicate<Integer>() {
                     @Override
                     public boolean test(Integer integer) throws Exception {
-                        //判断是否所有元素等于0
+                        //判断是否有元素等于0
                         return integer == 3;
                     }
                 })

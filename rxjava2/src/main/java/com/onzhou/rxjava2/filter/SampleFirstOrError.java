@@ -1,5 +1,6 @@
 package com.onzhou.rxjava2.filter;
 
+import com.onzhou.rxjava2.common.CommonComsumer;
 import com.onzhou.rxjava2.plugin.InvokePlugin;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
@@ -14,11 +15,6 @@ public class SampleFirstOrError implements InvokePlugin {
     @Override
     public void invoke() {
         Observable.empty()
-                .firstOrError().subscribe(new Consumer<Object>() {
-            @Override
-            public void accept(Object value) throws Exception {
-                System.out.println(value);
-            }
-        });
+                .firstOrError().subscribe(new CommonComsumer<>());
     }
 }

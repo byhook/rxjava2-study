@@ -2,6 +2,9 @@ package com.onzhou.rxjava2.combine;
 
 import com.onzhou.rxjava2.common.CommonObserver;
 import com.onzhou.rxjava2.plugin.InvokePlugin;
+
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 
 /**
@@ -13,8 +16,17 @@ public class SampleMerge implements InvokePlugin {
 
     @Override
     public void invoke() {
-        Observable.merge(Observable.just(1, 2), Observable.just(3, 4), Observable.just(5, 6), Observable.just(7, 8))
-                .subscribeWith(new CommonObserver<>());
+        Observable.merge(
+                Observable.intervalRange(0, 3, 1, 1, TimeUnit.SECONDS),
+                Observable.intervalRange(3, 3, 1, 1, TimeUnit.SECONDS)
+        ).subscribeWith(new CommonObserver<>());
+
+        try {
+            Thread.sleep(8000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

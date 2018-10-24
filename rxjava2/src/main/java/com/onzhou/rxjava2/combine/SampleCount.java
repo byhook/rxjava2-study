@@ -2,6 +2,7 @@ package com.onzhou.rxjava2.combine;
 
 import com.onzhou.rxjava2.common.CommonComsumer;
 import com.onzhou.rxjava2.plugin.InvokePlugin;
+
 import io.reactivex.Observable;
 import io.reactivex.functions.BiConsumer;
 
@@ -19,18 +20,7 @@ public class SampleCount implements InvokePlugin {
     public void invoke() {
         Observable
                 .just(1, 2, 3)
-                .collect(new Callable<ArrayList<Integer>>() {
-                    @Override
-                    public ArrayList<Integer> call() throws Exception {
-                        return new ArrayList<>();
-                    }
-                }, new BiConsumer<ArrayList<Integer>, Integer>() {
-                    @Override
-                    public void accept(ArrayList<Integer> list, Integer value) throws Exception {
-                        System.out.println("add element " + value);
-                        list.add(value);
-                    }
-                })
+                .count()
                 .subscribe(new CommonComsumer<>());
     }
 

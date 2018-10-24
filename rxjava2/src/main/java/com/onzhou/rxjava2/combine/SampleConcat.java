@@ -13,7 +13,10 @@ public class SampleConcat implements InvokePlugin {
 
     @Override
     public void invoke() {
-        Observable.concat(Observable.just(1, 2), Observable.just(3, 4, 5), Observable.just(7, 8, 9))
+        Observable.concat(
+                Observable.just(1, 2),
+                Observable.just(3, 4, 5),
+                Observable.just(7, 8, 9))
                 .subscribeWith(new CommonObserver<>());
     }
 
